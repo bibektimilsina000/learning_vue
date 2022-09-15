@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Basics</title>
+    <title> To Do</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
       rel="stylesheet"
@@ -14,15 +14,36 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue ToDo App</h1>
     </header>
     <section id="user-goals">
-      <h2>My course goals</h2>
-      <input type="text" />
-      <button>Add Goal</button>
-      <p>No goals have been added yet - please start adding some!</p>
-      <ul>
-        <li>Goal</li>
+      <h2>My To Do</h2>
+      <input type="text" v-model="inputGoal" />
+      <button @click="addItem">Add Goal</button>
+      <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
+      <ul v-else>
+        <p>Click goal to remove from the list</p>
+
+        <!-- v-show is used to just hide content with css
+        from the dom but is present there  -->
+
+        <!-- v-for can give more then just a item from the list in can also give the
+        index of the item in the list we can specify index by ussing (item ,index) v-for
+      list  -->
+
+        <!-- v-for can also be used to loop throug object (value,key,index) can be extracted from the object respectively -->
+
+        <!-- e.g.: <li v-for="(valuei,keyi,indexi) in {'name':'martha','age':31}"></li> -->
+
+        <!-- can be looped throug numbers too eg v-for=" num in 10" {{num}} -->
+        <li  v-for="(item,index) in goals" :key="item"   @click="removeItem(index)" >
+          <p>{{item}}</p>
+          <input type="text" @click.stop>
+
+        </li>
+          
+
+      
       </ul>
     </section>
   </body>
