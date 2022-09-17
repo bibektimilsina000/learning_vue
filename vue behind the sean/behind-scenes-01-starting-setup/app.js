@@ -31,3 +31,15 @@ const data = {
   message: "hello  ",
   longMessage: "hello Worldd",
 };
+
+const handler = {
+  set(target, key, value) {
+    if (key == "message") {
+      target.longMessage = value + "worlddddd";
+    }
+    target.message = value;
+  },
+};
+
+const proxy = new Proxy(data, handler);
+console.log((proxy.message = "hello atuo"));
