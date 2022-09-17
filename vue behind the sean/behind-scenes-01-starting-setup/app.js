@@ -1,8 +1,8 @@
 const app = Vue.createApp({
   data() {
     return {
-      currentUserInput: '',
-      message: 'Vue is great!',
+      currentUserInput: "",
+      message: "Vue is great!",
     };
   },
   methods: {
@@ -15,4 +15,19 @@ const app = Vue.createApp({
   },
 });
 
-app.mount('#app');
+app.mount("#app");
+
+let Message = "hello ";
+
+let longMessage = Message + " Worldd";
+
+console.log(longMessage);
+
+Message = "hey";
+
+console.log(longMessage);
+
+const data = {
+  message: "hello  ",
+  longMessage: "hello Worldd",
+};
