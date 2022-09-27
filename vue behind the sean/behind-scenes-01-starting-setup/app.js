@@ -7,10 +7,11 @@ const app = Vue.createApp({
   },
   methods: {
     saveInput(event) {
-      this.currentUserInput = event.target.value;
+      // this.currentUserInput = event.target.value;
     },
     setText() {
-      this.message = this.currentUserInput;
+      this.message = this.$refs.userInput.value;
+      // this.message = this.currentUserInput;
     },
   },
 });
