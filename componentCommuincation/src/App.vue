@@ -12,12 +12,6 @@
         :email-address="friend.email"
         :isfavorite="true"
       />
-      <friend-contact
-        name="hari"
-        phone-number="988 989897"
-        email-address="gmail@gmail.com"
-        :isfavorite="false"
-      />
     </ul>
   </section>
 </template>
