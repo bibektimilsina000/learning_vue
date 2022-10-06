@@ -13,7 +13,7 @@
       <input type="email" v-model="email" />
     </div>
     <div>
-      <button>Add Friend</button>
+      <button @click="$emit('delete', id)">Add Friend</button>
     </div>
   </form>
 </template>

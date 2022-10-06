@@ -6,6 +6,7 @@
       {{ detailsAreVisible ? "Hide" : "Show" }} Details
     </button>
     <button @click="toggleFav">Toggle Favorite</button>
+    <button>Delete</button>
     <ul v-if="detailsAreVisible">
       <li>
         <strong>Phone:</strong>
