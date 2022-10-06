@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h2>{{ name }}{{ favFriend === "1" ? "(Fav)" : "" }}</h2>
+    <h2>{{ name }}{{ favFriend ? "(Fav)" : "" }}</h2>
 
     <button @click="toggleDetails">
       {{ detailsAreVisible ? "Hide" : "Show" }} Details
@@ -39,9 +39,9 @@ export default {
       type: Boolean,
       require: false,
       deafult: false,
-      validator: function (value) {
-        return value === false || value === true;
-      },
+      // validator: function (value) {
+      //   return value === false || value === true;
+      // },
     },
   },
   data() {
@@ -62,11 +62,7 @@ export default {
     },
 
     toggleFav() {
-      if (this.favFriend === "1") {
-        this.favFriend = "0";
-      } else {
-        this.favFriend = "1";
-      }
+      this.favFriend = !this.favFriend;
     },
   },
 };
