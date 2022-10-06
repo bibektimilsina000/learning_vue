@@ -14,6 +14,7 @@
         :email-address="friend.email"
         :isfavorite="friend.isfavorite"
         @toggle-fav="toggleFav"
+        @delete="deleteFrnd"
       />
     </ul>
   </section>
@@ -62,6 +63,10 @@ export default {
 
       this.friends.push(newFrnd);
     },
+    deleteFrnd(id) {
+      console.log("delete frnd ", id);
+      this.friends = this.friends.filter((friend) => friend.id !== id);
+    },
   },
 };
 </script>
@@ -74,7 +79,7 @@ html {
   font-family: "Jost", sans-serif;
 }
 body {
-  margin: 0;
+  margin: 20px;
 }
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -84,8 +89,6 @@ header {
   background-color: #58004d;
   color: white;
   text-align: center;
-  width: 90%;
-  max-width: 40rem;
 }
 #app ul {
   margin: 0;
@@ -112,9 +115,12 @@ header {
   font: inherit;
   cursor: pointer;
   border: 1px solid #ff0077;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
   background-color: #ff0077;
   color: white;
-  padding: 0.05rem 1rem;
+
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 }
 #app button:hover,
